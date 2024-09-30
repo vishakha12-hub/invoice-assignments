@@ -1,0 +1,857 @@
+"data":{
+  "category": "Sale",
+  "type": "Sale",
+  "remark": "Invoice against Order #OR00000344",
+  "config": {
+    "storageLocationId": "66cc58164a2345e82ff32c5e"
+  },
+  "subTotal": 1100,
+  "discount": 0,
+  "couponDiscount": 0,
+  "discountedSubTotal": 1100,
+  "taxTotal": 132,
+  "mrpTotal": 1100,
+  "previousDue": 0,
+  "amount": 1232,
+  "roundOff": 0,
+  "subTotalAmount": 1232,
+  "paymentStatus": "Paid",
+  "deliveryStatus": "Placed",
+  "invoiceDate": {
+    "$date": "2024-09-24T00:00:00.000Z"
+  },
+  "dueDate": {
+    "$date": "2024-09-24T06:31:45.834Z"
+  },
+  "partyId": {
+    "$oid": "66bef857870dc89d7b746fac"
+  },
+  "Party": {
+    "name": "Aditya Jadhav",
+    "firstName": "Aditya",
+    "middleName": "Prakash",
+    "lastName": "Jadhav",
+    "mobile": "+917498848862",
+    "email": "flexprinting01shreegurukrupa@gmail.com",
+    "mobileVerified": true,
+    "emailVerified": true,
+    "loginAllowed": true,
+    "gender": "male",
+    "dob": {
+      "$date": "1990-01-01T00:00:00.000Z"
+    },
+    "maritalStatus": "Single",
+    "address": {
+      "location": "Chinchwadgaon ",
+      "area": "Pune City",
+      "city": "Pune",
+      "state": "MAHARASHTRA",
+      "country": "india",
+      "pincode": "411033"
+    },
+    "bankDetails": {
+      "accountNumber": "Vilas@7889",
+      "ifscCode": ""
+    },
+    "pan": "AAAAA4433G",
+    "aadhar": "111122223333",
+    "category": "Staff",
+    "type": "FlexOperator",
+    "created": {
+      "$date": "2024-08-16T06:57:27.818Z"
+    },
+    "modified": {
+      "$date": "2024-08-26T11:13:50.762Z"
+    },
+    "joiningDate": {
+      "$date": "2024-08-16T00:00:00.000Z"
+    },
+    "Company": {
+      "_id": {
+        "$oid": "63e77bd798d7330a0583b31f"
+      },
+      "userId": {
+        "$oid": "63e243e0b8c48b22c885b4b9"
+      },
+      "name": "Shree Gurukrupa Printers",
+      "logo": "/api/download/63e243e0b8c48b22c885b4b9/default/Guru108.png",
+      "favicon": "/api/download/63e243e0b8c48b22c885b4b9/default/Guru108.png",
+      "address": {
+        "line1": "Audhumbar Colony, near Nakshtram Hotel, OPP. Hotel Ranmala",
+        "line2": "Walhekarwadi Road, Chinchwad, Pune-411033",
+        "location": "Chinchwadgaon ",
+        "area": "Pune City",
+        "city": "Pune",
+        "state": "MAHARASHTRA",
+        "country": "india",
+        "pincode": "411033"
+      },
+      "headQuarters": {
+        "line1": "Audhumbar Colony, near Nakshtram Hotel, OPP. Hotel Ranmala",
+        "line2": "Walhekarwadi Road, Chinchwad, Pune-411033",
+        "location": "Chinchwadgaon "
+      },
+      "contactDetails": {
+        "email": "gurukrupa@apnasite.in",
+        "mobile": "+919518573320",
+        "alternateMobile": "+917875790008",
+        "website": "www.shreegurukrupaprinters.com",
+        "socialLinks": []
+      },
+      "category": "Own",
+      "created": {
+        "$date": "2023-02-11T09:39:21.251Z"
+      },
+      "modified": {
+        "$date": "2024-08-27T04:29:19.438Z"
+      },
+      "bankDetails": {
+        "vpa": "ujwala6767@ybl"
+      },
+      "companyId": {
+        "$oid": "63e77bd798d7330a0583b31f"
+      },
+      "darkLogo": "/api/download/63e243e0b8c48b22c885b4b9/default/Guru108.png",
+      "config": {
+        "isPartnerWholesaleRateEnabled": false,
+        "isMrpDiscountEnabled": true,
+        "showCgstSgst": true,
+        "isProductStockRequired": false,
+        "isShippingChargesEnabled": false,
+        "showPartnerWholesaleRate": true,
+        "enableShoppingCart": false,
+        "enableProductEnquiry": true,
+        "isVirtualAccountAllowed": false,
+        "isCloudPhoneEnabled": false,
+        "isSoftPhoneEnabled": false,
+        "callStatusMapping": [
+          {}
+        ]
+      },
+      "hoursRequired": 8,
+      "weekendDays": {
+        "Sunday": true,
+        "Saturday": true
+      }
+    },
+    "InvoiceSalesSummary": {
+      "mrpTotal": 1100,
+      "roundOff": 0,
+      "discountedSubTotal": 1100,
+      "invoices": 1,
+      "subTotal": 1100,
+      "discount": 0,
+      "taxTotal": 132,
+      "previousDue": 0,
+      "amount": 1232,
+      "subTotalAmount": 1232
+    },
+    "OrderSalesSummary": {
+      "orders": 1,
+      "discount": 0,
+      "discountedSubTotal": 1100,
+      "taxTotal": 132,
+      "mrpTotal": 1100,
+      "previousDue": 0,
+      "subTotalAmount": 1232,
+      "amount": 1232,
+      "roundOff": 0,
+      "subTotal": 1100
+    },
+    "TransactionSummary": {
+      "totalCreditAmount": 1232,
+      "totalDebitAmount": 0,
+      "transactions": 1,
+      "totalCredit": 1,
+      "totalDebit": 1
+    }
+  },
+  "User": {
+    "_id": {
+      "$oid": "63e788d598d7330a0583b329"
+    },
+    "userId": {
+      "$oid": "63e243e0b8c48b22c885b4b9"
+    },
+    "companyId": {
+      "$oid": "63e77bd798d7330a0583b31f"
+    },
+    "name": "Admin Gurukrupa",
+    "firstName": "Admin",
+    "middleName": "V",
+    "lastName": "Gurukrupa",
+    "mobile": "+919518573320",
+    "email": "admin@apnasite.in",
+    "mobileVerified": true,
+    "emailVerified": false,
+    "loginAllowed": true,
+    "gender": "male",
+    "dob": {
+      "$date": "1996-12-29T00:00:00.000Z"
+    },
+    "maritalStatus": "Single",
+    "address": {
+      "line1": "Jadhavwadi\n108",
+      "line2": "Jadhavwadi\n108",
+      "location": "Chinchwadgaon ",
+      "area": "Pune City",
+      "city": "Pune",
+      "state": "MAHARASHTRA",
+      "country": "india",
+      "pincode": "411033"
+    },
+    "bankDetails": {
+      "accountNumber": "881012360222",
+      "ifscCode": ""
+    },
+    "pan": "lkmjn8765t",
+    "aadhar": "989876543467",
+    "category": "Staff",
+    "type": "Admin",
+    "created": {
+      "$date": "2023-02-11T12:23:49.394Z"
+    },
+    "modified": {
+      "$date": "2023-02-17T10:16:19.840Z"
+    },
+    "joiningDate": {
+      "$date": "1997-10-22T00:00:00.000Z"
+    }
+  },
+  "particulars": [
+    {
+      "_id": {
+        "$oid": "66f269bde5ed46f5103ba1a6"
+      },
+      "companyId": {
+        "$oid": "63e77bd798d7330a0583b31f"
+      },
+      "userId": {
+        "$oid": "63e788d598d7330a0583b329"
+      },
+      "partyId": {
+        "$oid": "66bef857870dc89d7b746fac"
+      },
+      "category": "Sale",
+      "type": "Sale",
+      "quantity": -1,
+      "tax": 12,
+      "sgst": 66,
+      "cgst": 66,
+      "igst": 0,
+      "inBoxQuantity": {
+        "$numberDouble": "NaN"
+      },
+      "boxQuantity": {
+        "$numberDouble": "NaN"
+      },
+      "mrp": 1100,
+      "purchaseRate": 950,
+      "saleRate": 1100,
+      "retailRate": 1100,
+      "wholesaleRate": 1050,
+      "subTotal": 1100,
+      "discount": 0,
+      "discountedSubTotal": 1100,
+      "taxTotal": 132,
+      "amount": 1232,
+      "mrpTotal": 1100,
+      "stockDate": {
+        "$date": "2024-09-24T00:00:00.000Z"
+      },
+      "config": {
+        "width": 1,
+        "height": 1,
+        "squareFeet": 1,
+        "noOfQuantity": 1
+      },
+      "created": {
+        "$date": "2024-09-24T06:31:45.995Z"
+      },
+      "modified": {
+        "$date": "2024-09-24T06:31:45.995Z"
+      },
+      "invoiceId": {
+        "$oid": "66f269bde5ed46f5103ba1a5"
+      },
+      "productId": {
+        "$oid": "66cc07dc6f4c53534f9da6d7"
+      },
+      "storageLocationId": {
+        "$oid": "66cc58164a2345e82ff32c5e"
+      },
+      "Owner": {
+        "userId": {
+          "$oid": "63e243e0b8c48b22c885b4b9"
+        },
+        "companyId": {
+          "$oid": "63e77bd798d7330a0583b31f"
+        },
+        "name": "Admin Gurukrupa",
+        "firstName": "Admin",
+        "middleName": "V",
+        "lastName": "Gurukrupa",
+        "mobile": "+919518573320",
+        "email": "admin@apnasite.in",
+        "mobileVerified": true,
+        "emailVerified": false,
+        "loginAllowed": true,
+        "gender": "male",
+        "dob": {
+          "$date": "1996-12-29T00:00:00.000Z"
+        },
+        "maritalStatus": "Single",
+        "address": {
+          "line1": "Jadhavwadi\n108",
+          "line2": "Jadhavwadi\n108",
+          "location": "Chinchwadgaon ",
+          "area": "Pune City",
+          "city": "Pune",
+          "state": "MAHARASHTRA",
+          "country": "india",
+          "pincode": "411033"
+        },
+        "bankDetails": {
+          "accountNumber": "881012360222",
+          "ifscCode": ""
+        },
+        "pan": "lkmjn8765t",
+        "aadhar": "989876543467",
+        "category": "Staff",
+        "type": "Admin",
+        "created": {
+          "$date": "2023-02-11T12:23:49.394Z"
+        },
+        "modified": {
+          "$date": "2023-02-17T10:16:19.840Z"
+        },
+        "joiningDate": {
+          "$date": "1997-10-22T00:00:00.000Z"
+        },
+        "id": {
+          "$oid": "63e788d598d7330a0583b329"
+        }
+      },
+      "Party": {
+        "uid": "LZWCX5OP",
+        "userId": {
+          "$oid": "63e243e0b8c48b22c885b4b9"
+        },
+        "companyId": {
+          "$oid": "63e77bd798d7330a0583b31f"
+        },
+        "name": "Aditya Jadhav",
+        "firstName": "Aditya",
+        "middleName": "Prakash",
+        "lastName": "Jadhav",
+        "mobile": "+917498848862",
+        "email": "flexprinting01shreegurukrupa@gmail.com",
+        "mobileVerified": true,
+        "emailVerified": true,
+        "loginAllowed": true,
+        "gender": "male",
+        "dob": {
+          "$date": "1990-01-01T00:00:00.000Z"
+        },
+        "maritalStatus": "Single",
+        "address": {
+          "location": "Chinchwadgaon ",
+          "area": "Pune City",
+          "city": "Pune",
+          "state": "MAHARASHTRA",
+          "country": "india",
+          "pincode": "411033"
+        },
+        "bankDetails": {
+          "accountNumber": "Vilas@7889",
+          "ifscCode": ""
+        },
+        "pan": "AAAAA4433G",
+        "aadhar": "111122223333",
+        "category": "Staff",
+        "type": "FlexOperator",
+        "created": {
+          "$date": "2024-08-16T06:57:27.818Z"
+        },
+        "modified": {
+          "$date": "2024-08-26T11:13:50.762Z"
+        },
+        "joiningDate": {
+          "$date": "2024-08-16T00:00:00.000Z"
+        },
+        "id": {
+          "$oid": "66bef857870dc89d7b746fac"
+        }
+      },
+      "Product": {
+        "uid": "PR2546",
+        "userId": {
+          "$oid": "63e788d598d7330a0583b329"
+        },
+        "companyId": {
+          "$oid": "63e77bd798d7330a0583b31f"
+        },
+        "parentId": {
+          "$oid": "66cc07db6f4c53534f9da6c7"
+        },
+        "name": "3 Pass Flex With Wooden Frame - 4X4",
+        "shortName": "3 Pass Flex With Wooden Frame",
+        "variant": {
+          "SQFT": "4X4"
+        },
+        "type": "Variant",
+        "tax": 12,
+        "isTaxIncluded": false,
+        "image": "/api/download/gurukrupa.apnasite.in/apimap/product-jpeg-1000x1000.jpg",
+        "description": "<p>3 Pass Flex With Wooden Frame</p>",
+        "unit": "Quantity",
+        "purchaseRate": 950,
+        "retailRate": 1100,
+        "wholesaleRate": 1050,
+        "mrp": 1100,
+        "wholesaleMarginType": "Amount",
+        "wholesaleMargin": 100,
+        "retailMarginType": "Amount",
+        "retailMargin": 150,
+        "crate": false,
+        "showInStore": false,
+        "taskWorkflowId": {
+          "$oid": "66bf370389b1888468c7da8c"
+        },
+        "isStockRequired": false,
+        "category": "Fabrication",
+        "additionalCategories": [],
+        "subCategory": "WithWoodenFrame",
+        "addToStock": false,
+        "startDate": {
+          "$date": "2024-08-25T06:31:38.297Z"
+        },
+        "expiryDate": {
+          "$date": "2024-08-25T06:31:38.297Z"
+        },
+        "created": {
+          "$date": "2024-08-25T06:31:38.297Z"
+        },
+        "modified": {
+          "$date": "2024-08-25T06:31:38.297Z"
+        },
+        "Owner": {
+          "userId": {
+            "$oid": "63e243e0b8c48b22c885b4b9"
+          },
+          "companyId": {
+            "$oid": "63e77bd798d7330a0583b31f"
+          },
+          "name": "Admin Gurukrupa",
+          "firstName": "Admin",
+          "middleName": "V",
+          "lastName": "Gurukrupa",
+          "mobile": "+919518573320",
+          "email": "admin@apnasite.in",
+          "mobileVerified": true,
+          "emailVerified": false,
+          "loginAllowed": true,
+          "gender": "male",
+          "dob": {
+            "$date": "1996-12-29T00:00:00.000Z"
+          },
+          "maritalStatus": "Single",
+          "address": {
+            "line1": "Jadhavwadi\n108",
+            "line2": "Jadhavwadi\n108",
+            "location": "Chinchwadgaon ",
+            "area": "Pune City",
+            "city": "Pune",
+            "state": "MAHARASHTRA",
+            "country": "india",
+            "pincode": "411033"
+          },
+          "bankDetails": {
+            "accountNumber": "881012360222",
+            "ifscCode": ""
+          },
+          "pan": "lkmjn8765t",
+          "aadhar": "989876543467",
+          "category": "Staff",
+          "type": "Admin",
+          "created": {
+            "$date": "2023-02-11T12:23:49.394Z"
+          },
+          "modified": {
+            "$date": "2023-02-17T10:16:19.840Z"
+          },
+          "joiningDate": {
+            "$date": "1997-10-22T00:00:00.000Z"
+          },
+          "id": {
+            "$oid": "63e788d598d7330a0583b329"
+          }
+        },
+        "Stocks": [
+          {
+            "companyId": {
+              "$oid": "63e77bd798d7330a0583b31f"
+            },
+            "userId": {
+              "$oid": "63e788d598d7330a0583b329"
+            },
+            "partyId": {
+              "$oid": "66bef857870dc89d7b746fac"
+            },
+            "category": "Sale",
+            "type": "Sale",
+            "quantity": -1,
+            "tax": 12,
+            "sgst": 66,
+            "cgst": 66,
+            "igst": 0,
+            "inBoxQuantity": {
+              "$numberDouble": "NaN"
+            },
+            "boxQuantity": {
+              "$numberDouble": "NaN"
+            },
+            "mrp": 1100,
+            "purchaseRate": 950,
+            "saleRate": 1100,
+            "retailRate": 1100,
+            "wholesaleRate": 1050,
+            "subTotal": 1100,
+            "discount": 0,
+            "discountedSubTotal": 1100,
+            "taxTotal": 132,
+            "amount": 1232,
+            "mrpTotal": 1100,
+            "stockDate": {
+              "$date": "2024-09-24T00:00:00.000Z"
+            },
+            "config": {
+              "width": 1,
+              "height": 1,
+              "squareFeet": 1,
+              "noOfQuantity": 1
+            },
+            "created": {
+              "$date": "2024-09-24T06:31:45.995Z"
+            },
+            "modified": {
+              "$date": "2024-09-24T06:31:45.995Z"
+            },
+            "invoiceId": {
+              "$oid": "66f269bde5ed46f5103ba1a5"
+            },
+            "productId": {
+              "$oid": "66cc07dc6f4c53534f9da6d7"
+            },
+            "storageLocationId": {
+              "$oid": "66cc58164a2345e82ff32c5e"
+            },
+            "id": {
+              "$oid": "66f269bde5ed46f5103ba1a6"
+            }
+          }
+        ],
+        "AvailableStock": {
+          "purchaseQuantity": 0,
+          "soldQuantity": -1,
+          "totalPrchaseAmount": 950,
+          "stockIn": 0,
+          "totalSaleAmount": 0,
+          "totalMrpAmount": 0,
+          "stockOut": 0,
+          "quantity": -1
+        },
+        "Discount": [],
+        "TaskWorkflow": {
+          "_id": {
+            "$oid": "66bf370389b1888468c7da8c"
+          },
+          "userId": {
+            "$oid": "63e243e0b8c48b22c885b4b9"
+          },
+          "companyId": {
+            "$oid": "63e77bd798d7330a0583b31f"
+          },
+          "category": "Manufacturing",
+          "type": "Flex",
+          "name": "Flex With Frame / Fabrication",
+          "description": "Flex With Frame / Fabrication",
+          "tasks": [
+            {
+              "taskId": {
+                "$oid": "66b5bf37ef301168d8bcdec6"
+              },
+              "hasDependency": false,
+              "hasNestedTasks": true,
+              "name": "Design + Printing",
+              "type": "DesignPrinting",
+              "category": "Template",
+              "statusAction": false,
+              "children": [
+                {
+                  "taskId": {
+                    "$oid": "66b20264dfa8c4dfb46dca3d"
+                  },
+                  "hasDependency": false,
+                  "hasNestedTasks": false,
+                  "name": "DTP design",
+                  "description": "",
+                  "type": "GraphicDesginer",
+                  "category": "Template",
+                  "statusAction": false
+                },
+                {
+                  "taskId": {
+                    "$oid": "640f24531af866ee353df8c6"
+                  },
+                  "hasDependency": true,
+                  "dependentTaskId": {
+                    "$oid": "66b20264dfa8c4dfb46dca3d"
+                  },
+                  "hasNestedTasks": false,
+                  "name": "Printing",
+                  "description": "Printing",
+                  "type": "Printing",
+                  "category": "Template",
+                  "statusAction": false
+                },
+                {
+                  "taskId": {
+                    "$oid": "66c5e08490ea68394f347a70"
+                  },
+                  "hasDependency": false,
+                  "hasNestedTasks": false,
+                  "name": "Frame Creation",
+                  "type": "Godown",
+                  "category": "Template",
+                  "statusAction": false
+                }
+              ]
+            },
+            {
+              "taskId": {
+                "$oid": "66b5a056927093350483cb3e"
+              },
+              "hasDependency": true,
+              "dependentTaskId": {
+                "$oid": "66b5bf37ef301168d8bcdec6"
+              },
+              "hasNestedTasks": false,
+              "name": "Pesting",
+              "description": "Create Frame",
+              "type": "Godown",
+              "category": "Template",
+              "statusAction": false
+            },
+            {
+              "taskId": {
+                "$oid": "66b5ad6b927093350483cb40"
+              },
+              "hasDependency": true,
+              "dependentTaskId": {
+                "$oid": "66b5a056927093350483cb3e"
+              },
+              "hasNestedTasks": false,
+              "name": " Delivery",
+              "type": "Delivery",
+              "category": "Template",
+              "statusAction": false
+            }
+          ],
+          "created": {
+            "$date": "2024-08-16T11:24:51.073Z"
+          },
+          "modified": {
+            "$date": "2024-08-21T12:41:59.953Z"
+          },
+          "Tasks": [
+            {
+              "_id": {
+                "$oid": "66b5a056927093350483cb3e"
+              },
+              "userId": {
+                "$oid": "63e788d598d7330a0583b329"
+              },
+              "companyId": {
+                "$oid": "63e77bd798d7330a0583b31f"
+              },
+              "category": "Template",
+              "type": "Godown",
+              "name": "Pesting",
+              "description": "Create Frame",
+              "dueDate": {
+                "$date": "2024-08-09T00:00:00.000Z"
+              },
+              "status": "ToDo",
+              "config": {
+                "attachementRequired": false
+              },
+              "checklist": [],
+              "statusAction": false,
+              "created": {
+                "$date": "2024-08-09T04:51:34.456Z"
+              },
+              "modified": {
+                "$date": "2024-08-22T09:54:07.382Z"
+              },
+              "id": {
+                "$oid": "66b5a056927093350483cb3e"
+              }
+            },
+            {
+              "_id": {
+                "$oid": "66b5ad6b927093350483cb40"
+              },
+              "userId": {
+                "$oid": "63e788d598d7330a0583b329"
+              },
+              "companyId": {
+                "$oid": "63e77bd798d7330a0583b31f"
+              },
+              "category": "Template",
+              "type": "Delivery",
+              "name": " Delivery",
+              "dueDate": {
+                "$date": "2024-08-09T00:00:00.000Z"
+              },
+              "status": "ToDo",
+              "config": {
+                "attachementRequired": false
+              },
+              "checklist": [],
+              "statusAction": false,
+              "created": {
+                "$date": "2024-08-09T05:47:23.818Z"
+              },
+              "modified": {
+                "$date": "2024-08-22T09:54:15.881Z"
+              },
+              "id": {
+                "$oid": "66b5ad6b927093350483cb40"
+              }
+            },
+            {
+              "_id": {
+                "$oid": "66b5bf37ef301168d8bcdec6"
+              },
+              "userId": {
+                "$oid": "63e788d598d7330a0583b329"
+              },
+              "companyId": {
+                "$oid": "63e77bd798d7330a0583b31f"
+              },
+              "category": "Template",
+              "type": "DesignPrinting",
+              "name": "Design + Printing",
+              "dueDate": {
+                "$date": "2024-08-09T00:00:00.000Z"
+              },
+              "status": "ToDo",
+              "config": {
+                "attachementRequired": false
+              },
+              "checklist": [],
+              "statusAction": false,
+              "created": {
+                "$date": "2024-08-09T07:03:19.155Z"
+              },
+              "modified": {
+                "$date": "2024-08-22T09:14:12.840Z"
+              },
+              "id": {
+                "$oid": "66b5bf37ef301168d8bcdec6"
+              }
+            }
+          ]
+        },
+        "Variants": [],
+        "retailDiscount": 0,
+        "retailDiscountPercentage": 0,
+        "wholesaleDiscount": 50,
+        "wholesaleDiscountPercentage": 4.55,
+        "id": {
+          "$oid": "66cc07dc6f4c53534f9da6d7"
+        }
+      },
+      "StorageLocation": {
+        "userId": {
+          "$oid": "63e788d598d7330a0583b329"
+        },
+        "companyId": {
+          "$oid": "63e77bd798d7330a0583b31f"
+        },
+        "category": "Godown",
+        "name": "Store (office)",
+        "address": "Store Room",
+        "created": {
+          "$date": "2024-08-26T06:31:41.709Z"
+        },
+        "modified": {
+          "$date": "2024-08-26T10:44:13.864Z"
+        },
+        "id": {
+          "$oid": "66cc58164a2345e82ff32c5e"
+        }
+      },
+      "Invoice": {
+        "uid": "IN00000283",
+        "userId": {
+          "$oid": "63e788d598d7330a0583b329"
+        },
+        "companyId": {
+          "$oid": "63e77bd798d7330a0583b31f"
+        },
+        "orderId": {
+          "$oid": "66f26933e5ed46f5103ba1a4"
+        },
+        "category": "Sale",
+        "type": "Sale",
+        "remark": "Invoice against Order #OR00000344",
+        "config": {
+          "storageLocationId": "66cc58164a2345e82ff32c5e"
+        },
+        "subTotal": 1100,
+        "discount": 0,
+        "couponDiscount": 0,
+        "discountedSubTotal": 1100,
+        "taxTotal": 132,
+        "mrpTotal": 1100,
+        "previousDue": 0,
+        "amount": 1232,
+        "roundOff": 0,
+        "subTotalAmount": 1232,
+        "paymentStatus": "Paid",
+        "deliveryStatus": "Placed",
+        "invoiceDate": {
+          "$date": "2024-09-24T00:00:00.000Z"
+        },
+        "dueDate": {
+          "$date": "2024-09-24T06:31:45.834Z"
+        },
+        "created": {
+          "$date": "2024-09-24T06:31:45.818Z"
+        },
+        "modified": {
+          "$date": "2024-09-24T10:02:46.486Z"
+        },
+        "partyId": {
+          "$oid": "66bef857870dc89d7b746fac"
+        },
+        "id": {
+          "$oid": "66f269bde5ed46f5103ba1a5"
+        }
+      }
+    }
+  ],
+  "Transaction": {
+    "totalCredit": 1232,
+    "totalDebit": 0
+  },
+  "balance": 0,
+  "UserDetails":{
+
+  },
+"CompanyDetails":{},
+"ThemeDetails":{}
+ 
+}
