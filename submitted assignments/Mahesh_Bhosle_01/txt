@@ -1,0 +1,55 @@
+ defaultData = {
+        logo: './invoice-logo-removebg-preview.png',
+        logoAlt: "Your Company Logo",
+      
+            party: {
+                name: 'Localhost',
+                mobile: '+917517978898',
+                email: 'kapansiteuser@gmail.com',
+                address: {
+                    location=
+                    area=
+                    city=
+                    state=
+                    country=
+                    pincode=
+                },
+            },
+            company: {
+                name: 'Kalpesh Shewale',
+                mobile: '+918669368242',
+                email: 'kshewale2001@gmail.com',
+                address: 'New, Adfsf, Pune H.O, Adilabad, ANDHRA PRADESH-504306',
+            },
+
+        invoiceNumber: 'IN00000659',
+        invoiceDate: 'Sep 4, 2024',
+        particulars: [
+            { name: 'Tax Demo', price: 100.00, quantity: 3, subtotal: 270.00, discount: 30.00, sgst: 16.20, cgst: 16.20, igst: 0.00, width: 5, height: 10, sq: 50 },
+            { name: 'Frame Demo', price: 50.00, qty: 6, subtotal: 300.00, discount: 0.00, sgst: 0.00, cgst: 0.00, igst: 0.00, width: 4, height: 8, sq: 10 },
+        ],
+        subtotal: 570.00,
+        discount: 30.00,
+        taxableAmount: 570.00,
+        sgstTotal: 16.20,
+        cgstTotal: 16.20,
+        igstTotal: 0.00,
+        amount: 642.00,
+        totalAmount: 642.00,
+        amountInWords: 'Six Hundred Forty Two',
+        bankDetails: {
+            bank: "YES BANK",
+            account: "66789999922445",
+            ifsc: "YESB0BNA567",
+            branch: "Kodihalli",
+        },
+        terms: [
+            "Goods once sold cannot be taken back or exchanged.",
+            "We are not the manufacturers; the company will stand for warranty as per their terms and conditions.",
+        ]
+    };
+
+
+
+
+    

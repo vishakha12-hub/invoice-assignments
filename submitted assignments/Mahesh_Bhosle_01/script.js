@@ -1,0 +1,334 @@
+class InvoiceComponent extends HTMLElement {
+    // Default configuration with class names for various elements
+    defaultConfig = {
+        containerClass: 'invoice-container',
+        headerClass: 'invoice-header',
+        logoClass: 'invoice-logo',
+        titleClass: 'invoice-title',
+        detailsClass: 'invoice-details',
+        sellerInfoClass: 'seller-info',
+        clientInfoClass: 'client-info',
+        itemsClass: 'invoice-items',
+        tableClass: 'invoice-table',
+        totalSectionClass: 'total-section',
+        footerClass: 'invoice-footer',
+        amountInWordsClass: 'amount-in-words',
+        footerTextClass: 'invoice-footer-text',
+
+        // Columns visibility options
+        showPrice: true,
+        showQty: true,
+        showSubtotal: true,
+        showDiscount: true,
+        showSgst: true,
+        showCgst: true,
+        showIgst: true,
+        showWidth: true,
+        showHeight: true,
+        showSq: true,
+
+        // New options for showing/hiding sections
+        showBankDetails: true, // Show or hide bank details
+        showTerms: true // Show or hide terms and conditions
+    };
+
+    // Default data
+    defaultData = {
+        logo: './invoice-logo-2.png',
+        logoAlt: "Your Company Logo",
+        party: {
+            name: 'Localhost',
+            mobile: '+917517978898',
+            email: 'kapansiteuser@gmail.com',
+            address: {
+                location: "Kalewadi",
+                area: "Pune City",
+                city: "Pune",
+                state: "MAHARASHTRA",
+                country: "India",
+                pincode: "411017"
+            }
+        },
+        company: {
+            name: 'Kalpesh Shewale',
+            mobile: '+918669368242',
+            email: 'kshewale2001@gmail.com',
+            address: {
+                city: "Adilabad",
+                state: "ANDHRA PRADESH",
+                country: "India",
+                pincode: "504306"
+            }
+        },
+        invoiceNumber: 'IN00000659',
+        invoiceDate: 'Sep 4, 2024',
+        items: [
+            { name: 'Tax Demo', price: 100.00, quantity: 3, subTotal: 270.00, discount: 30.00, sgst: 16.20, cgst: 16.20, igst: 0.00, width: 5, height: 10, sq: 50 },
+            { name: 'Frame Demo', price: 50.00, quantity: 6, subTotal: 300.00, discount: 0.00, sgst: 0.00, cgst: 0.00, igst: 0.00, width: 4, height: 8, sq: 10 },
+            { name: 'Frame Demo', price: 50.00, quantity: 6, subTotal: 300.00, discount: 0.00, sgst: 0.00, cgst: 0.00, igst: 0.00, width: 4, height: 8, sq: 10 }
+        ],
+        subTotal: 570.00,
+        discount: 30.00,
+        taxableAmount: 570.00,
+        sgstTotal: 16.20,
+        cgstTotal: 16.20,
+        igstTotal: 0.00,
+        amount: 642.00,
+        totalAmount: 642.00,
+        amountInWords: 'Six Hundred Forty Two',
+        bankDetails: {
+            bank: "YES BANK",
+            account: "66789999922445",
+            ifsc: "YESB0BNA567",
+            branch: "Kodihalli",
+        },
+        terms: [
+            "Goods once sold cannot be taken back or exchanged.",
+            "We are not the manufacturers; the company will stand for warranty as per their terms and conditions.",
+        ]
+    };
+
+    constructor() {
+        super();
+        this.config = this.defaultConfig;
+        this.data = this.defaultData;
+
+        // Create a shadow root
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        // Load external CSS file
+        const linkElement = document.createElement('link');
+        linkElement.setAttribute('rel', 'stylesheet');
+        linkElement.setAttribute('href', 'style.css'); // Adjust the path if necessary
+        shadow.appendChild(linkElement);
+
+        // Create container for the invoice
+        this.container = document.createElement('div');
+        shadow.appendChild(this.container);
+    }
+
+    static get observedAttributes() {
+        return ["config", "data"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+            if (name === 'config' && newValue) {
+                try {
+                    const customConfig = JSON.parse(newValue);
+                    this.config = { ...this.defaultConfig, ...customConfig };  // Merge the default config with the custom config
+                } catch (e) {
+                    console.error('Invalid config JSON:', e);
+                }
+            }
+            if (name === 'data' && newValue) {
+                try {
+                    this.data = JSON.parse(newValue);
+                } catch (e) {
+                    console.error('Invalid data JSON:', e);
+                }
+            }
+            this.render();
+        }
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.container.innerHTML = ''; // Clear previous content
+
+        // Use the provided config and data, otherwise fall back to defaults
+        const config = this.config || this.defaultConfig;
+        const data = this.data || this.defaultData;
+
+        // Check if party data is defined
+        const seller = data.party || {};
+        const client = data.company || {};
+
+        // Apply the container class
+        this.container.classList.add(config.containerClass);
+
+        // Header
+        const header = document.createElement('div');
+        header.classList.add(config.headerClass);
+
+        const logo = document.createElement('img');
+        logo.src = data.logo;
+        logo.alt = data.logoAlt || 'Company Logo';
+        logo.classList.add(config.logoClass);
+        header.appendChild(logo);
+
+        const title = document.createElement('h1');
+        title.textContent = 'Invoice';
+        title.classList.add(config.titleClass);
+        header.appendChild(title);
+
+        this.container.appendChild(header);
+
+        // Invoice details
+        const details = document.createElement('div');
+        details.classList.add(config.detailsClass);
+
+        // Seller information
+        const sellerInfo = this.createInfoSection('Seller', seller);
+        details.appendChild(sellerInfo);
+
+        // Client information
+        const clientInfo = this.createInfoSection('Client', client);
+        details.appendChild(clientInfo);
+
+        this.container.appendChild(details);
+
+        // Invoice items
+        const items = document.createElement('div');
+        items.classList.add(config.itemsClass);
+
+        const table = document.createElement('table');
+        table.classList.add(config.tableClass);
+
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        headerRow.appendChild(this.createTableHeaderCell('Product'));
+
+        // Add the headers based on config
+        if (config.showPrice) headerRow.appendChild(this.createTableHeaderCell('Price'));
+        if (config.showQty) headerRow.appendChild(this.createTableHeaderCell('Quantity'));
+        if (config.showSubtotal) headerRow.appendChild(this.createTableHeaderCell('Subtotal'));
+        if (config.showDiscount) headerRow.appendChild(this.createTableHeaderCell('Discount'));
+        if (config.showSgst) headerRow.appendChild(this.createTableHeaderCell('SGST'));
+        if (config.showCgst) headerRow.appendChild(this.createTableHeaderCell('CGST'));
+        if (config.showIgst) headerRow.appendChild(this.createTableHeaderCell('IGST'));
+        if (config.showWidth) headerRow.appendChild(this.createTableHeaderCell('W'));
+        if (config.showHeight) headerRow.appendChild(this.createTableHeaderCell('H'));
+        if (config.showSq) headerRow.appendChild(this.createTableHeaderCell('Sq'));
+
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        data.items.forEach(item => {
+            const row = document.createElement('tr');
+            row.appendChild(this.createTableCell(item.name));
+
+            // Add the data based on config
+            if (config.showPrice) row.appendChild(this.createTableCell(`$${item.price.toFixed(2)}`));
+            if (config.showQty) row.appendChild(this.createTableCell(item.quantity));
+            if (config.showSubtotal) row.appendChild(this.createTableCell(`$${item.subTotal.toFixed(2)}`));
+            if (config.showDiscount) row.appendChild(this.createTableCell(`$${item.discount.toFixed(2)}`));
+            if (config.showSgst) row.appendChild(this.createTableCell(`$${item.sgst.toFixed(2)}`));
+            if (config.showCgst) row.appendChild(this.createTableCell(`$${item.cgst.toFixed(2)}`));
+            if (config.showIgst) row.appendChild(this.createTableCell(`$${item.igst.toFixed(2)}`));
+            if (config.showWidth) row.appendChild(this.createTableCell(item.width));
+            if (config.showHeight) row.appendChild(this.createTableCell(item.height));
+            if (config.showSq) row.appendChild(this.createTableCell(item.sq));
+
+            tbody.appendChild(row);
+        });
+
+        table.appendChild(tbody);
+        items.appendChild(table);
+        this.container.appendChild(items);
+
+        // Total section
+        const totalSection = document.createElement('div');
+        totalSection.classList.add(config.totalSectionClass);
+
+        const totalItems = [
+            { label: 'Subtotal:', value: `$${data.subTotal.toFixed(2)}` },
+            { label: 'Discount:', value: `$${data.discount.toFixed(2)}` },
+            { label: 'Taxable Amount:', value: `$${data.taxableAmount.toFixed(2)}` },
+            { label: 'SGST Total:', value: `$${data.sgstTotal.toFixed(2)}` },
+            { label: 'CGST Total:', value: `$${data.cgstTotal.toFixed(2)}` },
+            { label: 'IGST Total:', value: `$${data.igstTotal.toFixed(2)}` },
+            { label: 'Amount:', value: `$${data.amount.toFixed(2)}` },
+            { label: 'Total Amount:', value: `$${data.totalAmount.toFixed(2)}` }
+        ];
+
+        totalItems.forEach(item => {
+            const totalRow = document.createElement('div');
+            totalRow.innerHTML = `<strong>${item.label}</strong> ${item.value}`;
+            totalSection.appendChild(totalRow);
+        });
+
+        this.container.appendChild(totalSection);
+
+        // Amount in words
+        const amountInWords = document.createElement('div');
+        amountInWords.classList.add(config.amountInWordsClass);
+        amountInWords.textContent = `Amount in Words: ${data.amountInWords}`;
+        this.container.appendChild(amountInWords);
+
+        // Bank details
+        if (config.showBankDetails && data.bankDetails) {
+            const bankDetails = document.createElement('div');
+            bankDetails.classList.add(config.footerClass); // Use footerClass for styling
+        
+            const bankTitle = document.createElement('h3');
+            bankTitle.textContent = 'Bank Details';
+            bankDetails.appendChild(bankTitle);
+        
+            const bankInfo = document.createElement('p');
+            bankInfo.textContent = `Bank: ${data.bankDetails.bank}; Account: ${data.bankDetails.account}; IFSC: ${data.bankDetails.ifsc}; Branch: ${data.bankDetails.branch}`;
+            bankDetails.appendChild(bankInfo);
+        
+            this.container.appendChild(bankDetails);
+        }
+        
+
+        // Terms
+        if (config.showTerms) {
+            const termsSection = document.createElement('div');
+            termsSection.innerHTML = '<h3>Terms & Conditions</h3>';
+            const termsList = document.createElement('ul');
+            data.terms.forEach(term => {
+                const listItem = document.createElement('li');
+                listItem.textContent = term;
+                termsList.appendChild(listItem);
+            });
+            termsSection.appendChild(termsList);
+            this.container.appendChild(termsSection);
+        }
+
+        // Footer
+        const footer = document.createElement('div');
+        footer.classList.add(config.footerClass);
+        footer.innerHTML = `<p class="${config.footerTextClass}">Thank you for your business!</p>`;
+        this.container.appendChild(footer);
+    }
+
+    createInfoSection(title, info) {
+        const section = document.createElement('div');
+        section.classList.add(title.toLowerCase().replace(' ', '-') + '-section');
+
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = title;
+        section.appendChild(titleElement);
+
+        // Address Formatting
+        const address = `${info.address.location || ''}, ${info.address.area || ''}, ${info.address.city || ''}, ${info.address.state || ''}, ${info.address.country || ''}, ${info.address.pincode || ''}`.trim();
+        section.innerHTML += `
+            <p><strong>Name:</strong> ${info.name || ''}</p>
+            <p><strong>Mobile:</strong> ${info.mobile || ''}</p>
+            <p><strong>Email:</strong> ${info.email || ''}</p>
+            <p><strong>Address:</strong> ${address}</p>
+        `;
+        return section;
+    }
+
+    createTableHeaderCell(content) {
+        const th = document.createElement('th');
+        th.textContent = content;
+        return th;
+    }
+
+    createTableCell(content) {
+        const td = document.createElement('td');
+        td.textContent = content;
+        return td;
+    }
+}
+
+// Define the custom element
+customElements.define('invoice-component', InvoiceComponent);

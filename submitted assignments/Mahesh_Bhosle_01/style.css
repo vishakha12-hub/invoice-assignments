@@ -1,0 +1,93 @@
+.invoice-container {
+    width: 210mm; 
+    height: 297mm;
+    border: 0.26mm solid #ccc; 
+    padding: 3mm; 
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0mm 0mm 2.65mm rgba(0, 0, 0, 0.1); 
+}
+
+/* Header Styles */
+.invoice-header {
+    background-color: #02BBA9; 
+    color: white;
+    text-align: center;
+    padding: 5pt;
+    margin-bottom: 2mm; 
+    border-radius: 1.32mm; 
+}
+
+.invoice-logo {
+    width: 31.75mm; 
+    margin-bottom: 2.65mm; 
+}
+
+.invoice-header h1 {
+    margin: 0;
+    font-size: 27pt; 
+    font-weight: bold;
+}
+
+/* Invoice Details */
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5mm; 
+    flex-wrap: wrap; 
+    padding: 3pt; 
+    background-color: #fff;
+    border-radius: 1.32mm; 
+    box-shadow: 0mm 0mm 1.32mm rgba(0, 0, 0, 0.1); }
+
+.invoice-details div {
+    flex: 1;
+    margin: 0 2.65mm; 
+}
+
+/* Table for products */
+.invoice-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5.29mm; 
+}
+
+.invoice-items th, .invoice-items td {
+    padding: 2.65mm; 
+    text-align: left;
+    border: 0.26mm solid #ddd; 
+}
+
+.invoice-items th {
+    background-color: #02BBA9;
+    color: white;
+}
+
+/* Subtotal, Total, and Footer Styles */
+.total-section {
+    background-color: #02BBA9;
+    color: white;
+    text-align: right;
+    padding: 11.25pt; 
+    font-weight: bold;
+    border-radius: 1.32mm; 
+}
+.amount-in-words{
+    position: relative;
+    left: 124mm;
+    padding: 1pt;
+    font-weight: bold;
+}
+
+.invoice-footer {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2mm;
+    text-align: left;
+    font-size: 10.5pt;
+    border-top: 0.79mm solid #02BBA9;
+}
