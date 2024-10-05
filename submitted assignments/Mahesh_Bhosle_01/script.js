@@ -14,22 +14,8 @@ class InvoiceComponent extends HTMLElement {
         footerClass: 'invoice-footer',
         amountInWordsClass: 'amount-in-words',
         footerTextClass: 'invoice-footer-text',
-
-        // Columns visibility options
-        showPrice: true,
-        showQty: true,
-        showSubtotal: true,
-        showDiscount: true,
-        showSgst: true,
-        showCgst: true,
-        showIgst: true,
-        showWidth: true,
-        showHeight: true,
-        showSq: true,
-
-        // New options for showing/hiding sections
-        showBankDetails: true, // Show or hide bank details
-        showTerms: true // Show or hide terms and conditions
+        showBankDetails: true, 
+        showTerms: true 
     };
 
     // Default data
@@ -63,7 +49,7 @@ class InvoiceComponent extends HTMLElement {
         invoiceNumber: 'IN00000659',
         invoiceDate: 'Sep 4, 2024',
         items: [
-            { name: 'Tax Demo', price: 100.00, quantity: 3, subTotal: 270.00, discount: 30.00, sgst: 16.20, cgst: 16.20, igst: 0.00, width: 5, height: 10, sq: 50 },
+            { name: 'Tax Demo', price: 100.00, quantity: 3, subTotal: 270.00, discount: 30.00, sgst: 16.20, cgst: 16.20, igst: 0.00, width: 5, height: 10, sq: 50},
             { name: 'Frame Demo', price: 50.00, quantity: 6, subTotal: 300.00, discount: 0.00, sgst: 0.00, cgst: 0.00, igst: 0.00, width: 4, height: 8, sq: 10 },
             { name: 'Frame Demo', price: 50.00, quantity: 6, subTotal: 300.00, discount: 0.00, sgst: 0.00, cgst: 0.00, igst: 0.00, width: 4, height: 8, sq: 10 }
         ],
@@ -138,195 +124,190 @@ class InvoiceComponent extends HTMLElement {
 
     render() {
         this.container.innerHTML = ''; // Clear previous content
-
+    
         // Use the provided config and data, otherwise fall back to defaults
         const config = this.config || this.defaultConfig;
         const data = this.data || this.defaultData;
-
+    
         // Check if party data is defined
         const seller = data.party || {};
         const client = data.company || {};
-
+    
         // Apply the container class
         this.container.classList.add(config.containerClass);
-
+    
         // Header
         const header = document.createElement('div');
         header.classList.add(config.headerClass);
-
+    
         const logo = document.createElement('img');
-        logo.src = data.logo;
+        logo.src = data.logo || this.defaultData.logo; // Fallback to default logo
         logo.alt = data.logoAlt || 'Company Logo';
         logo.classList.add(config.logoClass);
         header.appendChild(logo);
-
+    
         const title = document.createElement('h1');
         title.textContent = 'Invoice';
         title.classList.add(config.titleClass);
         header.appendChild(title);
-
+    
         this.container.appendChild(header);
-
+    
         // Invoice details
         const details = document.createElement('div');
         details.classList.add(config.detailsClass);
-
+    
         // Seller information
         const sellerInfo = this.createInfoSection('Seller', seller);
         details.appendChild(sellerInfo);
-
+    
         // Client information
         const clientInfo = this.createInfoSection('Client', client);
         details.appendChild(clientInfo);
-
+    
         this.container.appendChild(details);
-
+    
         // Invoice items
         const items = document.createElement('div');
         items.classList.add(config.itemsClass);
-
+    
         const table = document.createElement('table');
         table.classList.add(config.tableClass);
-
+    
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
         headerRow.appendChild(this.createTableHeaderCell('Product'));
+    
+         // Collect all unique keys from the items to create headers
+    const allKeys = new Set();
 
-        // Add the headers based on config
-        if (config.showPrice) headerRow.appendChild(this.createTableHeaderCell('Price'));
-        if (config.showQty) headerRow.appendChild(this.createTableHeaderCell('Quantity'));
-        if (config.showSubtotal) headerRow.appendChild(this.createTableHeaderCell('Subtotal'));
-        if (config.showDiscount) headerRow.appendChild(this.createTableHeaderCell('Discount'));
-        if (config.showSgst) headerRow.appendChild(this.createTableHeaderCell('SGST'));
-        if (config.showCgst) headerRow.appendChild(this.createTableHeaderCell('CGST'));
-        if (config.showIgst) headerRow.appendChild(this.createTableHeaderCell('IGST'));
-        if (config.showWidth) headerRow.appendChild(this.createTableHeaderCell('W'));
-        if (config.showHeight) headerRow.appendChild(this.createTableHeaderCell('H'));
-        if (config.showSq) headerRow.appendChild(this.createTableHeaderCell('Sq'));
+    data.items.forEach(item => {
+        Object.keys(item).forEach(key => {
+            allKeys.add(key);
+        });
+    });
 
-        thead.appendChild(headerRow);
-        table.appendChild(thead);
+    allKeys.forEach(key => {
+        if (key !== 'name') {
+            headerRow.appendChild(this.createTableHeaderCell(key.charAt(0).toUpperCase() + key.slice(1)));
+        }
+    });
 
-        const tbody = document.createElement('tbody');
-        data.items.forEach(item => {
-            const row = document.createElement('tr');
-            row.appendChild(this.createTableCell(item.name));
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
 
-            // Add the data based on config
-            if (config.showPrice) row.appendChild(this.createTableCell(`$${item.price.toFixed(2)}`));
-            if (config.showQty) row.appendChild(this.createTableCell(item.quantity));
-            if (config.showSubtotal) row.appendChild(this.createTableCell(`$${item.subTotal.toFixed(2)}`));
-            if (config.showDiscount) row.appendChild(this.createTableCell(`$${item.discount.toFixed(2)}`));
-            if (config.showSgst) row.appendChild(this.createTableCell(`$${item.sgst.toFixed(2)}`));
-            if (config.showCgst) row.appendChild(this.createTableCell(`$${item.cgst.toFixed(2)}`));
-            if (config.showIgst) row.appendChild(this.createTableCell(`$${item.igst.toFixed(2)}`));
-            if (config.showWidth) row.appendChild(this.createTableCell(item.width));
-            if (config.showHeight) row.appendChild(this.createTableCell(item.height));
-            if (config.showSq) row.appendChild(this.createTableCell(item.sq));
+    const tbody = document.createElement('tbody');
+    data.items.forEach(item => {
+        const row = document.createElement('tr');
+        row.appendChild(this.createTableCell(item.name));
 
-            tbody.appendChild(row);
+        // Create cells based on the collected keys
+        allKeys.forEach(key => {
+            if (key !== 'name') {
+                row.appendChild(this.createTableCell(item[key] !== undefined ? item[key] : ''));
+            }
         });
 
-        table.appendChild(tbody);
-        items.appendChild(table);
-        this.container.appendChild(items);
+        tbody.appendChild(row);
+    });
 
+    table.appendChild(tbody);
+    items.appendChild(table);
+    this.container.appendChild(items);
+    
         // Total section
         const totalSection = document.createElement('div');
         totalSection.classList.add(config.totalSectionClass);
-
+    
         const totalItems = [
-            { label: 'Subtotal:', value: `$${data.subTotal.toFixed(2)}` },
-            { label: 'Discount:', value: `$${data.discount.toFixed(2)}` },
-            { label: 'Taxable Amount:', value: `$${data.taxableAmount.toFixed(2)}` },
-            { label: 'SGST Total:', value: `$${data.sgstTotal.toFixed(2)}` },
-            { label: 'CGST Total:', value: `$${data.cgstTotal.toFixed(2)}` },
-            { label: 'IGST Total:', value: `$${data.igstTotal.toFixed(2)}` },
-            { label: 'Amount:', value: `$${data.amount.toFixed(2)}` },
-            { label: 'Total Amount:', value: `$${data.totalAmount.toFixed(2)}` }
+            { label: 'Subtotal:', value: data.subTotal !== undefined ? `$${data.subTotal.toFixed(2)}` : '$0.00' },
+            { label: 'Discount:', value: data.discount !== undefined ? `$${data.discount.toFixed(2)}` : '$0.00' },
+            { label: 'Taxable Amount:', value: data.taxableAmount !== undefined ? `$${data.taxableAmount.toFixed(2)}` : '$0.00' },
+            { label: 'SGST Total:', value: data.sgstTotal !== undefined ? `$${data.sgstTotal.toFixed(2)}` : '$0.00' },
+            { label: 'CGST Total:', value: data.cgstTotal !== undefined ? `$${data.cgstTotal.toFixed(2)}` : '$0.00' },
+            { label: 'IGST Total:', value: data.igstTotal !== undefined ? `$${data.igstTotal.toFixed(2)}` : '$0.00' },
+            { label: 'Amount:', value: data.amount !== undefined ? `$${data.amount.toFixed(2)}` : '$0.00' },
+            { label: 'Total Amount:', value: data.totalAmount !== undefined ? `$${data.totalAmount.toFixed(2)}` : '$0.00' }
         ];
-
+    
         totalItems.forEach(item => {
             const totalRow = document.createElement('div');
             totalRow.innerHTML = `<strong>${item.label}</strong> ${item.value}`;
             totalSection.appendChild(totalRow);
         });
-
+    
         this.container.appendChild(totalSection);
-
+    
         // Amount in words
         const amountInWords = document.createElement('div');
         amountInWords.classList.add(config.amountInWordsClass);
-        amountInWords.textContent = `Amount in Words: ${data.amountInWords}`;
+        amountInWords.textContent = `Amount in words: ${data.amountInWords || 'N/A'}`;
         this.container.appendChild(amountInWords);
-
-        // Bank details
-        if (config.showBankDetails && data.bankDetails) {
-            const bankDetails = document.createElement('div');
-            bankDetails.classList.add(config.footerClass); // Use footerClass for styling
-        
-            const bankTitle = document.createElement('h3');
-            bankTitle.textContent = 'Bank Details';
-            bankDetails.appendChild(bankTitle);
-        
-            const bankInfo = document.createElement('p');
-            bankInfo.textContent = `Bank: ${data.bankDetails.bank}; Account: ${data.bankDetails.account}; IFSC: ${data.bankDetails.ifsc}; Branch: ${data.bankDetails.branch}`;
-            bankDetails.appendChild(bankInfo);
-        
-            this.container.appendChild(bankDetails);
-        }
-        
-
-        // Terms
-        if (config.showTerms) {
+    
+       // Conditionally render bank details
+       if (config.showBankDetails && data.bankDetails) {
+        const bankDetails = document.createElement('div');
+        bankDetails.classList.add(config.footerClass); // Use footerClass for styling
+    
+        const bankTitle = document.createElement('h3');
+        bankTitle.textContent = 'Bank Details';
+        bankDetails.appendChild(bankTitle);
+    
+        const bankInfo = document.createElement('p');
+        bankInfo.textContent = `Bank: ${data.bankDetails.bank}; Account: ${data.bankDetails.account}; IFSC: ${data.bankDetails.ifsc}; Branch: ${data.bankDetails.branch}`;
+        bankDetails.appendChild(bankInfo);
+    
+        this.container.appendChild(bankDetails);
+    }
+    
+        // Terms and conditions
+        if (config.showTerms && data.terms && data.terms.length) {
             const termsSection = document.createElement('div');
-            termsSection.innerHTML = '<h3>Terms & Conditions</h3>';
-            const termsList = document.createElement('ul');
+            termsSection.classList.add('terms-section');
+            termsSection.innerHTML = `<strong>Terms and Conditions:</strong>`;
             data.terms.forEach(term => {
-                const listItem = document.createElement('li');
-                listItem.textContent = term;
-                termsList.appendChild(listItem);
+                const termItem = document.createElement('div');
+                termItem.textContent = term;
+                termsSection.appendChild(termItem);
             });
-            termsSection.appendChild(termsList);
             this.container.appendChild(termsSection);
         }
-
+    
         // Footer
         const footer = document.createElement('div');
         footer.classList.add(config.footerClass);
         footer.innerHTML = `<p class="${config.footerTextClass}">Thank you for your business!</p>`;
         this.container.appendChild(footer);
     }
-
+    
     createInfoSection(title, info) {
         const section = document.createElement('div');
-        section.classList.add(title.toLowerCase().replace(' ', '-') + '-section');
+        section.classList.add(this.config.sellerInfoClass);
+        const titleElem = document.createElement('h2');
+        titleElem.textContent = title;
+        section.appendChild(titleElem);
 
-        const titleElement = document.createElement('h3');
-        titleElement.textContent = title;
-        section.appendChild(titleElement);
-
-        // Address Formatting
-        const address = `${info.address.location || ''}, ${info.address.area || ''}, ${info.address.city || ''}, ${info.address.state || ''}, ${info.address.country || ''}, ${info.address.pincode || ''}`.trim();
-        section.innerHTML += `
-            <p><strong>Name:</strong> ${info.name || ''}</p>
-            <p><strong>Mobile:</strong> ${info.mobile || ''}</p>
-            <p><strong>Email:</strong> ${info.email || ''}</p>
-            <p><strong>Address:</strong> ${address}</p>
+        const infoDetails = document.createElement('p');
+        infoDetails.innerHTML = `
+            <strong>Name:</strong> ${info.name || ''}<br>
+            <strong>Mobile:</strong> ${info.mobile || ''}<br>
+            <strong>Email:</strong> ${info.email || ''}<br>
+            <strong>Address:</strong> ${info.address?.location || ''}, ${info.address?.city || ''}, ${info.address?.state || ''}, ${info.address?.pincode || ''}, ${info.address?.country || ''}
         `;
+        section.appendChild(infoDetails);
         return section;
     }
 
     createTableHeaderCell(content) {
-        const th = document.createElement('th');
-        th.textContent = content;
-        return th;
+        const cell = document.createElement('th');
+        cell.textContent = content;
+        return cell;
     }
 
     createTableCell(content) {
-        const td = document.createElement('td');
-        td.textContent = content;
-        return td;
+        const cell = document.createElement('td');
+        cell.textContent = content;
+        return cell;
     }
 }
 
