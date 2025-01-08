@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Design </title>
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div class="row">
+    <div class="col-6">
+      <invoice-component>
+      </invoice-component>
+    </div>
+    <div class="col-6">
+      <invoice-form-component
+      data-fields='[
+      {"label": "Date:", "type": "date", "name": "invoiceDate", "row": 1},
+        {"label": "Vno:", "type": "text", "name": "vno", "row": 1},
+        {"label": "Invoice No:", "type": "text", "name": "config.invoice_no", "row": 1, "disabled": true},
+        {
+          "label": "Company:",
+          "type": "text",
+          "name": "company",
+          "className": "formly-company",
+          "autoComplete": true
+        },
+        {"label": "Godown:", "type": "text", "name": "config.storageLocationId", "row": 2},
+        {"label": "Supplier:", "type": "text", "name": "supplier", "row": 3},
+        {"label": "Narr:", "type": "text", "name": "narr", "row": 3},
+        {"label": "CST/IGST:", "type": "select", "name": "cst_igst", "row": 4, "options": [{"label": "CST", "value": "CST"}, {"label": "IGST", "value": "IGST"}]},
+        {"label": "For LBT:", "type": "select", "name": "forlbt", "row": 4, "options": [{"label": "Yes", "value": "yes"}, {"label": "No", "value": "no"}]},
+        {"label": "PO No:", "type": "text", "name": "po_no", "row": 4, "required": true}
+  ]'>
+      </invoice-form-component>
+    </div>
+  </div>
+  
+  
+  <script src="script.js"></script>
+  <script>
+    document.querySelector('invoice-form-component').addEventListener('submit', (event) => {
+    console.log('Form Data:', event.detail); 
+
+
+    // Update the invoice-component's data attribute
+    const invoiceComponent = document.querySelector('invoice-component');
+    invoiceComponent.setAttribute('data', JSON.stringify(event.detail));
+});
+
+  </script>
+</body>
+</html>
