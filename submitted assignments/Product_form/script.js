@@ -11,7 +11,7 @@ class PurchaseComponent extends HTMLElement {
      
      ]
     data = [
-        { label: "Product Code", type: "text", required: true, dataModel: "workflows", className: "col-3 col-md-2 rounded-pill", placeholder: "Enter Product Code",defaultValue:0        },
+        { label: "Product Code", type: "text", required: true, dataModel: "workflows", className: "col-3 col-md-2 rounded-pill", placeholder: "Enter Product Code", },
         { label: "Product/Service Name", type: "text", required: true, className: "col-3 col-md-2 rounded-pill", value: "0", placeholder: "Enter Product/Service Name" },
         { label: "Short Name", type: "text", required: true, className: "col-3 col-md-2 rounded-pill", value: "0", placeholder: "Enter Short Name" },
         { label: "Group", type: "autocomplete", required: true, dataModel: "workflows", className: "col-3 col-md-2 rounded-pill", value: "0", placeholder: "Enter Group" },
