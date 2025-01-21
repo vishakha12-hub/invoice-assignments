@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+        <invoice-component 
+        config='{
+            "containerClass": "invoice-container",
+        "headerClass": "invoice-header",
+        "logoClass": "invoice-logo",
+        "titleClass": "invoice-title",
+        "detailsClass": "invoice-details",
+        "sellerInfoClass": "seller-info",
+        "clientInfoClass": "client-info",
+        "itemsClass": "invoice-items",
+        "tableClass": "invoice-table",
+        "totalSectionClass": "total-section",
+        "footerClass": "invoice-footer",
+        "amountInWordsClass": "amount-in-words",
+        "footerTextClass": "invoice-footer-text",
+        }'
+          
+            data='{
+                "logo": "background.jpg",
+                "logoAlt": "Invoice Logo",
+                "party": {
+                    "name": "Rohit Sharma",
+                    "mobile": "+919876543210",
+                    "email": "rohitsharma@example.com",
+                    "address": {
+                        "location": "Baner",
+                        "city": "Pune",
+                        "state": "Maharashtra",
+                        "country": "India",
+                        "pincode": "411045"
+                    }
+                },
+                "company": {
+                    "name": "Vikram Enterprises",
+                    "mobile": "+918765432109",
+                    "email": "vikram@example.com",
+                    "address": {
+                        "city": "Mumbai",
+                        "state": "Maharashtra",
+                        "country": "India",
+                        "pincode": "400001"
+                    }
+                },
+                "invoiceNumber": "IN00000701",
+                "invoiceDate": "Jan 7, 2025",
+                "items": [
+                    { 
+                        "name": "item1", 
+                        "price": 60, 
+                        "quantity": 5, 
+                        "subTotal": 200, 
+                        "discount": 5, 
+                        "sgst": 9, 
+                        "cgst": 9, 
+                        "width": 6, 
+                        "height": 9, 
+                        "sq": 54 ,
+                        "rating":4
+
+                    },
+                    { 
+                        "name": "item2", 
+                        "price": 60, 
+                        "quantity": 5, 
+                        "subTotal": 200, 
+                        "discount": 5, 
+                        "sgst": 9, 
+                        "cgst": 9, 
+                        "width": 6, 
+                        "height": 9, 
+                        "sq": 54 ,
+                        "rating":4
+
+                    },
+
+                    { 
+                        "name": "item3", 
+                        "price": 20, 
+                        "quantity": 5, 
+                        "subTotal": 100, 
+                        "discount": 0, 
+                        "sgst": 8, 
+                        "cgst": 9, 
+                        "width": 1, 
+                        "height": 6, 
+                        "sq": 6 ,
+                        "rating":5
+                        
+                    },
+                    { 
+                        "name": "item4", 
+                        "price": 40, 
+                        "quantity": 3, 
+                        "subTotal": 120, 
+                        "discount": 0, 
+                        "sgst": 10.8, 
+                        "cgst": 10.8, 
+                        "width": 2, 
+                        "height": 5, 
+                        "sq": 10 ,
+                        "rating":4
+                        
+                    }
+                ],
+                "subTotal": 420,
+                "discount": 5,
+                "taxableAmount": 415,
+                "sgstTotal": 28.8,
+                "cgstTotal": 28.8,
+                "amount": 472.6,
+                "totalAmount": 473,
+                "amountInWords": "Four Hundred Seventy Three",
+                "bankDetails": {
+                    "bank": "BANK OF INDIA ",
+                    "account": "98765432109876",
+                    "ifsc": "HDFC0001234",
+                    "branch": "Mumbai Branch"
+                },
+                "terms": [
+                  
+                   
+                ]
+            }'>
+        </invoice-component>
+  
+</body>
+<script src="./script.js"></script>
+
+</html>
