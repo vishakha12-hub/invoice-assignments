@@ -1,0 +1,247 @@
+.invoice-wrapper {
+    width: 493.5pt; /* Converted from 658px */
+    padding: 15pt; /* Converted from 20px */
+    font-family: Arial, sans-serif;
+    color: #333;
+    border: 0.75pt solid black; /* Converted from 1px */
+    position: absolute;
+    overflow: hidden;
+    height: 256mm;
+}
+.modal-body{
+    height: 70vh;
+}
+.invoice-background {
+    position: absolute;
+}
+
+.rect-top-1 {
+    width: 125mm;
+    height: 6mm;
+    top: 41mm;
+    left: 110mm;
+    background: rgb(245, 160, 33);
+    position: absolute;
+    rotate: -5deg;
+    z-index: 1;
+    border-top-left-radius: 300mm;
+    border-bottom-left-radius: 300mm;
+    border-right: 10mm;
+  }
+  
+  .rect-top-2 {
+    left: -7mm;
+    width: 265mm;
+    height: 50mm;
+    top: -17mm;
+    background: rgb(245, 160, 33);
+    transform: skewX(173deg);
+    rotate: -5deg;
+    position: absolute;
+    z-index: 0;
+  }
+  
+  .rect-top-3 {
+    width: 119mm;
+      height: 3mm;
+      top: 31mm;
+      left: 137mm;
+      background: rgb(48, 64, 126);
+      position: absolute;
+      rotate: -5deg;
+      z-index: 1;
+      border-top-left-radius: 300mm;
+      border-bottom-left-radius: 300mm;
+      border-right: 10mm;
+  }
+  
+  .rect-bottom-1 {
+    width: 172mm;
+    height: 6mm;
+    top: 234mm;
+    left: -39mm;
+    background: rgb(244, 154, 32);
+    position: absolute;
+    rotate: 175deg;
+    z-index: 1;
+    border-top-left-radius: 300mm;
+    border-bottom-left-radius: 300mm;
+    border-right: 10mm;
+  }
+  
+  .rect-bottom-2 {
+    left: -9mm;
+    width: 263mm;
+    height: 56mm;
+    top: 230mm;
+    background: rgb(7, 50, 93);
+    transform: skewX(194deg);
+    rotate: -4deg;
+    position: absolute;
+    z-index: 0;
+  }
+  .rect-bottom-3 {
+    width: 176mm;
+    height: 3mm;
+    top: 247mm;
+    left: -95mm;
+    background: rgb(10, 72, 117);
+    position: absolute;
+    rotate: 175deg;
+    z-index: 1;
+    border-top-left-radius: 300mm;
+    border-bottom-left-radius: 300mm;
+    border-right: 10mm;
+  }
+  
+.invoice-content {
+    margin-top: 15pt; /* Converted from 20px */
+    position: absolute;  
+    top: 7mm;
+
+}
+
+.invoice-title {
+    text-align: center;
+    font-size: 33pt;
+    font-weight: bold;
+    z-index: 2;
+    top: -6mm;
+    left: 9mm;
+    color: #2e2164d6;
+    position: absolute;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.invoice-header .invoice-header-logo {
+    width: 20%;
+    left: 133mm;
+    top: -8mm;
+    height: 25mm;
+    position: absolute;
+    /* border: 1mm solid black; */
+  }
+
+.invoice-details{
+    margin: 3.75pt 0; /* Converted from 5px */
+    position: absolute;
+    width: -1mm;
+    font-weight: bold;
+    top: 50mm;
+    left: 118mm;
+
+}
+
+.invoice-company-details{
+    position: absolute;
+    width: 51mm;
+    top: 56mm;
+    left: 0mm;  
+}
+
+.org-name {
+    position: absolute;
+    width: 73mm;
+    top: -8mm;
+    left: 0mm;
+    font-size: 17pt;
+    font-weight: bold;   
+}
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+    top: 100mm;
+}
+
+.content-table th {
+    border: 0.75pt solid #ddd; /* Converted from 1px */
+    padding: 6pt; /* Converted from 8px */
+    position: relative;
+    background-color: rgb(253, 164, 0);
+}
+.content-table td{
+    border: 0.75pt solid #ddd; /* Converted from 1px */
+    padding: 6pt; /* Converted from 8px */
+    position: relative;
+}
+
+.content-header {
+    margin: 3.75pt 0; /* Converted from 5px */
+    position: absolute;
+    width: 10mm;
+    top: 10mm;
+    left: -20mm; 
+}
+
+.right-align {
+    text-align: right;
+    position: absolute;
+}
+
+.total-amount {
+    top: 132mm;
+    position: absolute;
+}
+.invoice-footer{
+    top: 212mm;
+    left: 11mm;
+    position: absolute;
+     
+}
+.terms{
+    top: 247mm; /* Converted from 20px */  
+    position: absolute;  
+    z-index: 4;
+    color: white;
+}
+.bank-details{
+    top: 74mm;
+    left: 118mm;
+    position: absolute;  
+  
+}
+
+.billing-address-section .details-header {
+    position: absolute;
+    color: black;
+    left: 0mm;
+    top: 147mm;
+    font-weight: bold;
+
+}
+
+.party-billing-address {
+    position: absolute;
+    color: black;
+    left: 0mm;
+    top: 153mm;
+}
+
+.shipping-address-section .details-header {
+    position: absolute;
+    color: black;
+    left: 116mm;
+    top: 147mm;
+    font-weight: bold;
+
+}
+
+.party-shipping-address {
+    position: absolute;
+    color: black;
+    left: 116mm;
+    top: 154mm;
+}
+
+.qr {
+    width: 25mm;
+    height: 25mm;
+    position: absolute;
+    top: 225mm;
+    left: 146mm;
+}
