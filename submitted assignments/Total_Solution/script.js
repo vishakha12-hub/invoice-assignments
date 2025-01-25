@@ -946,3 +946,5 @@ class InvoiceFormComponent extends HTMLElement {
 }
 
 customElements.define('invoice-form-component', InvoiceFormComponent);
+if (!window.customElementsList) window.customElementsList = [];
+window.customElementsList.push({ component: 'invoice-form-component', componentClass: InvoiceFormComponent });
