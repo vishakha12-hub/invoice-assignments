@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    
+    <invoice-component 
+    config='{
+        "containerClass": "invoice-container",
+        "headerClass": "invoice-header",
+        "logoClass": "invoice-logo",
+        "titleClass": "invoice-title",
+        "detailsClass": "invoice-details",
+        "sellerInfoClass": "seller-info",
+        "serviceClass": "service-info",
+        "itemsClass": "invoice-items",
+        "tableClass": "invoice-table",
+        "totalSectionClass": "total-section",
+        "footerClass": "invoice-footer",
+        "amountInWordsClass": "amount-in-words",
+        "footerTextClass": "invoice-footer-text",
+        "invoiceClass":"invoice-no ",
+        "dateClass":"date",
+        "signatureClass":"signature",
+        "signClass":"sign-logo",
+      
+    }'
+  
+    data='{
+        "logo": "./invoice-logo-2.png",
+        "logoAlt": "Invoice Logo",
+        "party": {
+            "name": "Aditya Jadhav",
+            "mobile": "+917498848862",
+            "email": "flexprinting01shreegurukrupa@gmail.com",
+            "address": {
+                "location": "Kalewadi",
+                "city": "Pune",
+                "state": "Maharashtra",
+                "country": "India",
+                "pincode": "411007"
+            }
+        },
+        "company": {
+            "name": "Kalpesh Shewale",
+            "mobile": "+918669368242",
+            "email": "kshewale2001@gmail.com",
+            "address": {
+                "city": "Adilabad",
+                "state": "Andhra Pradesh",
+                "country": "India",
+                "pincode": "504306"
+            }
+        },
+        "email":"design@gmail.com",
+        "no":"(123) 456 789",
+        "date":"Date : August 5,2025",
+        "signature":"John Smith",
+        "sign":"./sign-logo.jpg",
+        "signAlt":"Signature",
+
+        "invoiceNumber": "Invoice Number:IN00000659",
+        "invoiceDate": "Invoice Date :Sep 4, 2024",
+        "items": [
+            { 
+                "no": "1", 
+                "descriptionOfServices": "Logo Design",
+                "quantity": "1 project",
+                "ratePerHour": "$500.00",
+                "total": "$500.00",
+                "gst":"400"
+            },
+            { 
+                "no": "2", 
+                "descriptionOfServices": "Brochure Design",
+                "quantity": "1 project",
+                "ratePerHour": "$500.00",
+                "total": "$500.00"
+            }, { 
+                "no": "3", 
+                "descriptionOfServices": "Brochure Design",
+                "quantity": "1 project",
+                "ratePerHour": "$500.00",
+                "total": "$500.00"
+            },{ 
+                "no": "3", 
+                "descriptionOfServices": "Brochure Design",
+                "quantity": "1 project",
+                "ratePerHour": "$500.00",
+                "total": "$500.00"
+            }
+            
+        ],
+        "subTotal": 450,
+        "discount": 10,
+        "taxableAmount": 340,
+        "sgstTotal": 22.5,
+        "cgstTotal": 22.5,
+        "amount": 385,
+        "totalAmount": 385,
+        "amountInWords": "Three Hundred Eighty Five",
+        "bankDetails": {
+            "paymentMethod": "Bank Transfer",
+            "dueDate": "October 15, 2030",
+            "bankAccount": "1234-5678-9012"
+        },
+        "terms": [
+            "Payment is due upon receipt of this invoice.",
+            "Late payments may incur additional charges.",
+            "Please make checks payable to your Graphics Design Studio."
+        ]
+    }'>
+</invoice-component>
+
+  
+</body>
+<script src="./script.js"></script>
+
+</html>

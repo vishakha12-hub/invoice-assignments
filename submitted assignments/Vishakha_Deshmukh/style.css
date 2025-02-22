@@ -1,0 +1,262 @@
+.invoice-container {
+    width: 210mm; 
+    height: 297mm;
+    border: 0.26mm solid #ccc; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0mm 0mm 2.65mm rgba(0, 0, 0, 0.1); 
+}
+
+/* Header Styles */
+.invoice-header {
+    background-color:white; 
+    color:black;
+    
+    
+   
+   
+   
+  
+   
+    
+}
+.invoice-title{
+   position: absolute;
+    padding-left:8mm;
+    top:4mm;
+    bottom: 100mm;
+    
+    font-size: 50px;
+  
+}
+
+.invoice-logo {
+    position: absolute;
+    width: 20mm;
+    padding-left: 125mm;
+    padding-top: 12mm;
+ 
+}
+
+.invoice-header h1 {
+    margin: 0;
+    font-size: 27pt; 
+    left:20mm;
+    font-weight: bold;
+}
+
+/* Invoice Details */
+
+
+.invoice-details div {
+   position:absolute;
+   bottom:200mm;
+}
+.bank-detail h3{
+    
+   
+ padding-left: 9mm;
+    color:white;
+}
+.bank-detail {
+    position: absolute;
+    top:210mm;
+    width:100%
+   
+
+
+}
+.bank-detail div {
+    position: absolute;
+    left:9mm;
+    width:100%;
+}
+
+/* Table for products */
+.invoice-items table {
+    width:200mm;
+    border-collapse: collapse;
+    margin-bottom: 2mm; 
+    position: absolute;
+    top:110mm;
+    left:8mm;
+}
+.line{
+    background-color: #0a104f;
+    height:10mm;
+    width:210mm;
+    position: absolute;
+    top:213mm;
+}
+
+.invoice-items th, .invoice-items td {
+    padding: 2mm; 
+    text-align: left;
+    font-size:13px;
+    border: 0.26mm solid #ddd; 
+}
+
+.invoice-items th {
+    background-color:rgb(207, 181, 8);
+    color: white;
+}
+.seller-info{
+    position: absolute;
+    top: 60mm;
+    padding-left: 8mm;
+    font-size: 15px;
+    
+}
+/* Subtotal, Total, and Footer Styles */
+.total-section {
+    background-color: white;
+    color: black;
+    position: absolute;
+    text-align: right;
+    padding-left: 155mm;
+    top:160mm;
+    
+   
+    line-height:10mm;
+   
+}
+.service-info{
+    position: absolute;
+    top:95mm;
+    padding-left: 6mm;
+}
+.amount-in-words{
+    position: relative;
+    left: 118mm;
+    padding: 1pt;
+    font-weight: bold;
+}
+
+.invoice-footer {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2mm;
+    position: absolute;
+    top:250mm;
+    text-align: left;
+    font-size: 10.5pt;
+    border-top: 0.79mm solid #02BBA9;
+}
+.terms-section{
+    position:absolute;
+    top:160mm;
+    padding-left: 6mm;
+    line-height: 6mm;
+    font-size:15px;
+}
+.upper-line{
+    position: absolute;
+    background-color: #0a104f;
+    top:0;
+    height:8mm;
+    width: 210mm;
+}
+.down-line{
+    position: absolute;
+    background-color: #0a104f;
+    top:290mm;
+    height:10mm;
+    width: 210mm; 
+}
+.upper-box{
+    position: absolute;
+    height:30mm;
+    width:30mm;
+    rotate: 45deg;
+    top:-20mm;
+    background-color: #02BBA9;
+    left:-17mm;
+   
+    overflow:hidden;
+}
+.down-box{
+    position:absolute;
+    height:30mm;
+    width:30mm;
+    rotate: 45deg;
+    top:285mm;
+    background-color: #02BBA9;
+    right:-17mm;
+   
+   
+    
+}
+.company{
+    position: absolute;
+    color: #077166;
+    left:148mm;
+    top: 8mm;
+    font-size: 30px;
+}
+.domain{
+    position: absolute;
+    color: black;
+    left:148mm;
+    top: 16mm;
+    font-size: 30px;
+}
+tr:nth-child(odd)
+ {background-color: rgb(171, 168, 168);}
+ .invoice-no{
+ position:absolute;
+ top:40mm;
+ left:135mm;
+ }
+ .question{
+    position: absolute;
+    top:250mm;
+    left:8mm;
+ }
+ .question-details{
+ position: absolute;
+ top:265mm;
+ left:8mm;
+ font-size: 15px;
+ }
+ .date{
+    position:absolute;
+    top:235mm;
+    left:150mm;
+    width:100%;
+    
+ }
+ .sign-logo{
+    position: absolute;
+    width:45mm;
+    top:245mm;
+    padding-left: 150mm;
+    
+ }
+ .signature{
+    position: absolute;
+    top:275mm;
+    left:160mm;
+  }
+  .underline{
+    position:absolute;
+    background-color: grey;
+    top:270mm;
+    left:145mm;
+    width:50mm;
+    height:0.5mm;
+  }
+ .client-info{
+    position: absolute;
+    top: 60mm;
+    padding-left: 115mm;
+    font-size: 15px;
+    font-size: 14px;
+ }
